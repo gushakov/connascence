@@ -1,6 +1,6 @@
 package com.github.connascence.infrastructure.adapter.db;
 
-import com.github.connascence.core.model.Student1;
+import com.github.connascence.core.model.Student;
 import com.github.connascence.core.port.persistence.PersistenceOperationsOutputPort;
 import org.springframework.stereotype.Service;
 
@@ -9,14 +9,14 @@ public class PersistenceGatewayAdapter implements PersistenceOperationsOutputPor
     // JdbcTemplate or JPA repository, mapper to DB entities are not shown
 
     @Override
-    public void saveStudent1(Student1 student1) {
+    public void saveStudent(Student student) {
 
         /*
             Let's assume that inadvertently, we change student's address
             before saving it.
          */
 
-        student1.updateAddress("Some new address");
+        student.updateAddress("Some new address");
 
         /*
             Then we proceed to map the domain model to persistence model
@@ -27,7 +27,7 @@ public class PersistenceGatewayAdapter implements PersistenceOperationsOutputPor
     }
 
     @Override
-    public Student1 loadStudent1(Integer studentId) {
+    public Student loadStudent(Integer studentId) {
         // load student from the database, omitted for clarity
         return null;
     }

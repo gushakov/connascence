@@ -1,7 +1,7 @@
 package com.github.connascence.core.port.mail;
 
-import com.github.connascence.core.model.Student1;
+import com.github.connascence.core.model.Student;
 
 public interface MailOperationsOutputPort {
-    void sendCongratulatoryLetter(Student1 student);
+    void sendCongratulatoryLetter(Student student);
 }

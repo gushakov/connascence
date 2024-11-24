@@ -1,6 +1,6 @@
 package com.github.connascence.core.usecase;
 
-import com.github.connascence.core.model.Student1;
+import com.github.connascence.core.model.Student;
 import com.github.connascence.core.port.mail.MailOperationsOutputPort;
 import com.github.connascence.core.port.persistence.PersistenceOperationsOutputPort;
 import lombok.AccessLevel;
@@ -21,7 +21,7 @@ public class ProcessStudentGraduationUseCase implements ProcessStudentGraduation
         // omit security and transaction management for clarity
 
         // load the student aggregate instance
-        Student1 student = persistenceOps.loadStudent1(studentId);
+        Student student = persistenceOps.loadStudent(studentId);
 
         /*
             Perform business logic related to the registration of student's
@@ -31,7 +31,7 @@ public class ProcessStudentGraduationUseCase implements ProcessStudentGraduation
         student.updateGraduateStatus();
 
         // save the student
-        persistenceOps.saveStudent1(student);
+        persistenceOps.saveStudent(student);
 
         /*
             Important: the address of the student has been (inadvertently) changed

@@ -1,10 +1,10 @@
 package com.github.connascence.core.port.persistence;
 
-import com.github.connascence.core.model.Student1;
+import com.github.connascence.core.model.Student;
 
 public interface PersistenceOperationsOutputPort {
 
-    void saveStudent1(Student1 student1);
+    void saveStudent(Student student);
 
-    Student1 loadStudent1(Integer studentId);
+    Student loadStudent(Integer studentId);
 }

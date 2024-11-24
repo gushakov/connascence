@@ -13,7 +13,7 @@ import lombok.experimental.FieldDefaults;
  */
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Student1 {
+public class Student {
 
     final Integer id;
 
@@ -26,7 +26,7 @@ public class Student1 {
     String address;
 
     @Builder
-    public Student1(Integer id, Boolean graduate, String address) {
+    public Student(Integer id, Boolean graduate, String address) {
         this.id = Validate.strictlyPositive(id);
         this.graduate = Validate.notNull(graduate);
         this.address = Validate.notBlank(address);
