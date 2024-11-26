@@ -2,6 +2,7 @@ package com.github.connascence.core.model;
 
 import lombok.AccessLevel;
 import lombok.Builder;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
 
@@ -13,8 +14,10 @@ import lombok.experimental.FieldDefaults;
  */
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Student {
 
+    @EqualsAndHashCode.Include
     final Integer id;
 
     /*

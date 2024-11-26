@@ -15,7 +15,7 @@ public class SampleStudents {
         );
     }
 
-    public static Student anyStudent(){
+    public static Student anyStudent() {
         return students().values().stream().findAny().orElseThrow(AssertionError::new);
     }
 

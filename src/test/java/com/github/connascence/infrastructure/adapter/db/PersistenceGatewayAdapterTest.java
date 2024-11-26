@@ -8,6 +8,11 @@ import static org.mockito.Mockito.*;
 
 public class PersistenceGatewayAdapterTest {
 
+    /*
+        This test will fail indicating that unexpected call to
+        the business method of "Student" has occurred.
+    */
+
     @Test
     void saving_student_does_not_have_side_effects() {
 
@@ -29,5 +34,6 @@ public class PersistenceGatewayAdapterTest {
         // and
         verify(student, never()).updateAddress(anyString());
         verify(student, never()).updateGraduateStatus();
+
     }
 }
